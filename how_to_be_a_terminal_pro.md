@@ -33,3 +33,18 @@ https://tutsplus.com/course/how-to-be-a-terminal-pro/
 * `open -a Pages aFile.txt` - will open that file with a specific application
 * `open -R aFile.txt` - opens that file and highlights it in Finder
 * `open http://www.google.com` - opens the website in the default browser
+
+### Files, Links, and CRUD
+* `touch superimportantfile.txt` - creates file
+* `nano superimportantfile.txt` - gives a text editor in the terminal to edit the file
+* `mkdir adir` - creates a directory
+* `touch adir/anotherfile.txt` - creates another file in that directory
+* `cp afile afile.bak` - creates a copy of a file
+* `cp -r adir seconddir` - the `-r` is the recursive option and lets you copy the directory and all the files in the directory
+* `mv afile adir` - move afile to adir
+* `mv afile ~/adir/afile-backup` - moves `afile` to the `adir` directory and renames the file `afile-backup`
+* `mv afile secondfile` - renames `afile` to `secondfile`
+* `mv file* adir/` - moves all the files starting with `file` to the `adir` directory. You can use this `*` with touch, etc.
+* `rm afile` - deletes `afile`
+* `rmdir folderr` - removes a folder - but if there's a file in the folder it won't work. You have to do `rm -r folderr` command
+* `ln -s afile symlinkforafile` - creates a symboliclink, the `-s` stands for soft link. The symlinkforafile will be the same as afile. But if you move/rename `afile` with a soft link, the symbolic link will be broken. But if you do a hard link `n afile2 hardlinkforafile2` then the link won't get broken by moving/renaming the file. 
