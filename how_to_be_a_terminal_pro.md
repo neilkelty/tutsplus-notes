@@ -47,4 +47,4 @@ https://tutsplus.com/course/how-to-be-a-terminal-pro/
 * `mv file* adir/` - moves all the files starting with `file` to the `adir` directory. You can use this `*` with touch, etc.
 * `rm afile` - deletes `afile`
 * `rmdir folderr` - removes a folder - but if there's a file in the folder it won't work. You have to do `rm -r folderr` command
-* `ln -s afile symlinkforafile` - creates a symboliclink, the `-s` stands for soft link. The symlinkforafile will be the same as afile. But if you move/rename `afile` with a soft link, the symbolic link will be broken. But if you do a hard link `n afile2 hardlinkforafile2` then the link won't get broken by moving/renaming the file. 
+* `ln -s afile symlinkforafile` - creates a symboliclink, the `-s` stands for soft link. The symlinkforafile will be the same as afile. But if you move/rename `afile` with a soft link, the symbolic link will be broken. But if you do a hard link `ln afile2 hardlinkforafile2` then the link won't get broken by moving/renaming the file. 
