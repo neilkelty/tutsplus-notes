@@ -13,3 +13,23 @@ https://tutsplus.com/course/how-to-be-a-terminal-pro/
 * Tab-completion - when you start typing out the filename, you can hit `tab` and it will either complete the file path or hitting `tab` twice will give you the options if there are multiple
 * Type `clear` to clear the terminal screen - you can still scroll up and see everything, just gives you a blank slate
 * Type in `man echo` or any other command for the manual/documentation
+
+### Navigating the File System
+* `ls Documents` - list out the contents of the Documents Directory
+* `ls Documents Music` - list out the contents of the Documents and Music directories (separately, of course)
+* `pwd` - print out working directory
+* Case-sensitivity will work on Mac, but not on Unix in general - so be careful about this
+* You can't leave a space in the file name - so you have two options `ls Some\ Documents` or `ls "Some Directory"`
+* `ls -l` - gives me a detailed list
+* `ls -a` - gives me all the files in a directory - including hidden files
+* `ls -t` - sorts the files by the time they were last modified
+* `ls -t -l -a`, `ls -tla`, or `ls -alt` - sort the files by the time they were last modified, gives me a detailed list, and gives me all the files
+* `cd Dcouments` - change to the documents folder
+* `cd .` - current directory
+* `cd ..` - one level up
+* You can drag a file from Finder right into the Terminal to specify the absolute path
+* `open .` - opens the current directory in the finder
+* `open aFile.txt` - will open the default application for that file
+* `open -a Pages aFile.txt` - will open that file with a specific application
+* `open -R aFile.txt` - opens that file and highlights it in Finder
+* `open http://www.google.com` - opens the website in the default browser
