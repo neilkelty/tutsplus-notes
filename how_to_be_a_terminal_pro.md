@@ -47,4 +47,17 @@ https://tutsplus.com/course/how-to-be-a-terminal-pro/
 * `mv file* adir/` - moves all the files starting with `file` to the `adir` directory. You can use this `*` with touch, etc.
 * `rm afile` - deletes `afile`
 * `rmdir folderr` - removes a folder - but if there's a file in the folder it won't work. You have to do `rm -r folderr` command
-* `ln -s afile symlinkforafile` - creates a symboliclink, the `-s` stands for soft link. The symlinkforafile will be the same as afile. But if you move/rename `afile` with a soft link, the symbolic link will be broken. But if you do a hard link `ln afile2 hardlinkforafile2` then the link won't get broken by moving/renaming the file. 
+* `ln -s afile symlinkforafile` - creates a symboliclink, the `-s` stands for soft link. The symlinkforafile will be the same as afile. But if you move/rename `afile` with a soft link, the symbolic link will be broken. But if you do a hard link `ln afile2 hardlinkforafile2` then the link won't get broken by moving/renaming the file.
+
+### Finding Files
+* `find ~/Sites -type f` - Find all in the `~/Sites` directory that are the type file.
+* `find ~/Sites -name "newestfile"` - Find the file in the `~/Sites` directory named `newestfile`.
+* `find ~/Sites -name "*.txt"` - Find all the files in the `~/Sites` direcotry that end in `.txt` (Won't find `.TXT`).
+* `find ~/Sites -size +2048` - Find all the files in the `~Sites` directory that are larger than 1MB. Can search for files smaller than a size by using `-`.
+* `find ~/Sites -mtime -1` - Find all files in the `~/Sites` directory that were modified in the last day. Use `-atime` to get the last access date or `-ctime` to get the create date.
+* `find ~/Sites -iname "*.txt" -or -iname "*.doc"` - Find all files in the `~/Sites` directory that have a case-insensitive extention of `.txt` or `.doc`. You can also use `-and`.
+* `find ~/Sites -iname "*.txt" -print -or -iname "aDir" -prune - Will only return the files with the extention `.txt` and won't include anything in "aDir".
+* `grep "Hello" afile` - returns the line of the file that it matched. `grep "Hello" -i afile` will do the same thing.
+* `grep "Hello" -il afile` - returns the names of the files that it matches.
+* `grep "Hello" -il *` - returns the names of the files that it matches in the current directory. Use `grep "Hello" -ilr *` to search the current directory recursively. 
+* `find . -name "*.txt" -exec -grep -il "Hello" {} \;` - You cannot `grep` recursilvely and specify the type of file (e.g. only search for text files), so you have to use this little trick.
